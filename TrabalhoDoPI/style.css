@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&display=swap');
+.font-orbitron{
+    font-family:'Orbitron',sans-serif;
+    letter-spacing: 3px;
+    font-size: 122;
+}
+body{
+    margin: 0; /*tira o espaço do topo do site e deixa a nav grudar o topo*/
+    min-height: 100vh; /*faz o body ter no minimo a altura do site todo*/
+    background: linear-gradient(220deg,#0A0A0C, #1c5260);
+    color: #F3F4F6;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-align: center;
+}
+
+.navbar{
+    margin-top: 0;
+    padding: 5px;
+    width: 100%; /*deixa a barra de ponta a ponta*/
+    height: 75px; /*altura da navbar*/
+    background-color: #0d222b;
+    color: white;  
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.navbar nav{
+    margin-left: 200px;
+    gap: 100px;
+}
+
+.navbar nav ul{ 
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar nav li{
+    margin-left: 40px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar a:hover{
+    color:#D4FF3F
+}
