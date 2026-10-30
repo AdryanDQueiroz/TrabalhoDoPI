@@ -3,46 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Camada Bruta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="navbar"> 
-        <h1 class="font-orbitron">CAMADA <a href="#">BRUTA</a></h1>
-    <nav>
-        <ul>
-            <li><a href="#"><h2>inicio</h2></a></li>
-            <li><a href="#"><h2>contato</h2></a></li>
-            <li><a href="#"><h2>sobre</h2></a></li>
-        </ul>
+    <header class="navbar">
+        <!-- Logo -->
+        <h1 class="font-orbitron">CAMADA <a href="#"> BRUTA</a></h1>
 
-    </nav>    
-</header>
-<br>
-<h2 class="font-orbitron">Transformando<span style="color:#D4FF3F"> ideias</span> em camadas</h2>
-<br>
+        <!-- Barra de pesquisa -->
+        <div class="barra-pesquisa">  
+            <input type="text" placeholder="Pesquisar">  
+        </div>
 
-<section id="produto">
-    <h2>Produtos em destaque</h2>
-<div class="produtos">
-    <div class="produto">
-        <img src="imagens/kratos.jpg" alt="ActionFigure">
-        <h3>Action Figure</h3>
-        <p>Action figure do kratos</p>
-    </div>
+<!-- ================= Carrinho ================== -->
+<div class="user">
 
-        <div class="produto">
-        <img src="imagens/kratos.jpg" alt="ActionFigure">
-        <h3>Action Figure</h3>
-        <p>Action figure do kratos</p>
-    </div>
+    <a href="carrinho.html" class="carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
 
-    <div class="produto">
-        <img src="imagens/kratos.jpg" alt="ActionFigure">
-        <h3>Action Figure</h3>
-        <p>Action figure do kratos</p>
-    </div>
+    <!-- =============== Usuário ================ -->
+    <a href="login.html" class="icone-user">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+
 </div>
-</section>
+
+        <!-- ============= Menu da nav ============= -->
+        <nav>
+            <ul>
+                <li>
+                    <a href="#"><h3>início</h3></a>
+                </li>
+
+                <li>
+                    <a href="#"><h3>contato</h3></a>
+                </li>
+
+                <li>
+                    <a href="#"><h3>sobre</h3></a>
+                </li>
+            </ul>
+        </nav>
+      
+    </header>
+
+    <!-- ================= CONTEÚDO ====================== -->
+    <main class="container-conteudo">
+
+        <!-- Título principal -->
+        <h2 class="font-orbitron">Transformando <span style="color:#D4FF3F"> ideias</span> em camadas</h2>
+        <!-- ================= PRODUTOS ================== -->
+        <section id="produto">
+            <h3>Produtos em destaque</h3>
+            <div class="produtos">
+
+                <!-- Produto 1 -->
+                <div class="produto">
+                    <img src="imagens/kratos.jpg" alt="Action Figure">
+                    <h5>Kratos</h5>
+                    <p class="preco-prod">R$129</p>
+                    <button class="adicionar-prod">+Adcionar</button>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="produto">
+                    <img src="imagens/Itachi.jpg" alt="Action Figure">
+                    <h5>Itachi</h5>
+                    <p class="preco-prod">R$129</p>
+                    <button class="adicionar-prod">+Adcionar</button>
+                </div>
+                <!-- Produto 3 -->
+                <div class="produto">
+                    <img src="imagens/Trunks.jpg" alt="Action Figure">
+                    <h5>Trunks</h5>
+                    <p class="preco-prod">R$129</p>
+                    <button class="adicionar-prod">+Adcionar</button>
+                </div>
+                <!-- Produto 4 -->
+                <div class="produto">
+                    <img src="imagens/Natsuki.jpg" alt="Action Figure">
+                    <h5>Natsuki</h5>
+                    <p class="preco-prod">R$129</p>
+                    <button class="adicionar-prod">+Adcionar</button>
+                </div>
+                <!-- Produto 5 -->
+                <div class="produto">
+                    <img src="imagens/Link.jpg" alt="Action Figure">
+                    <h5>Link</h5>
+                    <p class="preco-prod">R$129</p>
+                    <button class="adicionar-prod">+Adcionar</button>
+                </div>
+                <!-- Produto 6 -->
+                <div class="produto">
+                    <img src="imagens/BarbaBranca.jpg" alt="Action Figure">
+                    <h5>Barba Branca</h5>
+                    <p class="preco-prod">R$129</p>
+                    <button class="adicionar-prod">+Adcionar</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
 </body>
 </html>
