@@ -1,19 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&display=swap');
+
+/* ================= FONTES ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 .font-orbitron{
-    font-family:'Orbitron',sans-serif;
+    font-family: 'Orbitron', sans-serif;
     letter-spacing: 3px;
     font-size: 26px;
 }
 
+/* ================= CONFIGURAÇÕES GERAIS ================= */
+
+/* NOVO: aplica o cálculo de tamanho mais previsível a todos os elementos */
+*{
+    box-sizing: border-box;
+}
+
 body{
-    height: 100vh;
-    margin: 0; /*tira o espaço do topo do site e deixa a nav grudar o topo*/
     min-height: 100vh; /*faz o body ter no minimo a altura do site todo*/
-    background: linear-gradient(220deg,#0A0A0C, #491f71);
+    margin: 0; /*tira o espaço do topo do site e deixa a nav grudar o topo*/
+    background: linear-gradient(220deg, #0A0A0C, #491f71);
     color: #F3F4F6;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: center;
-    overflow-x: hidden;/*tira aquela barra de rolagem lateral*/
+    overflow-x: hidden; /*tira aquela barra de rolagem lateral*/
 }
 
 .container{
@@ -22,17 +32,20 @@ body{
     margin: 0 auto;
 }
 
+/* ================= NAVBAR ================= */
+
 .navbar{
     margin-top: 0;
-    padding: 5px;
     width: 100%; /*deixa a barra de ponta a ponta*/
     height: 75px; /*altura da navbar*/
     padding: 5px 20px;
     background-color: #0A0A0C;
-    color: white;  
+    color: white;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     box-sizing: border-box;
     position: relative;
 }
@@ -43,23 +56,28 @@ body{
     transform: translateX(-50%);
     top: 75px;
     width: 600px;
+    max-width: 90%; /*NOVO: impede que o menu ultrapasse a tela*/
     height: 50px;
-    background-color:#0A0A0C;
+    background-color: #0A0A0C;
     border-radius: 0 0 30px 40px;
+
     display: flex;
     align-items: center;
+    justify-content: center; /*NOVO: centraliza os links*/
 }
 
 .navbar nav ul{
-    gap: 35px; 
+    gap: 35px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
-    padding: 90px;
-    list-style: none;    
+    padding: 0; /*ALTERAÇÃO: removemos os 90px que empurravam os links*/
+    list-style: none;
 }
 
 .navbar nav li{
-    margin-left: 30px;
+    margin: 0; /*ALTERAÇÃO: o espaçamento agora fica somente no gap*/
 }
 
 .navbar a{
@@ -70,68 +88,219 @@ body{
 }
 
 .navbar a:hover{
-    color:#D4FF3F;
+    color: #D4FF3F;
 }
 
 .navbar h1 a{
+    font-size: 26px;
     color: #8a2be2;
     text-decoration: none;
 }
 
 .navbar h1 a:hover{
-    color:#D4FF3F;
+    color: #D4FF3F;
 }
 
+/* ================= PRINCIPAL ================= */
+
+/*cria o container do card principal e das fotos*/
+
+.container-card-principal{
+    display: flex;
+    align-items: center;
+    justify-content: center; /*NOVO: centraliza o conjunto*/
+    gap: 20px;
+
+    width: 90%; /*ALTERAÇÃO: ocupa 90% da tela*/
+    max-width: 1400px; /*NOVO: impede que fique largo demais*/
+
+    margin: 100px auto 45px; /*ALTERAÇÃO: centraliza e mantém o espaço superior*/
+}
+
+/*card da frase principal*/
+
+.card-principal{
+    flex: 2; /*NOVO: divide o espaço disponível com a área das fotos*/
+    min-width: 0;
+    height: 400px;
+    padding: 25px;
+
+    display: flex; /*NOVO: permite organizar o conteúdo interno*/
+    align-items: center;
+    justify-content: center;
+
+    text-align: left;
+    background-color: #39165a;
+    border-radius: 10px;
+}
+
+.botao-catalogo{
+    background-color: #D4FF3F;
+    color: rgb(12, 11, 11);
+    border-radius: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+.botao-catalogo:hover{
+    background-color: #8a2be2;
+    color: rgb(12, 11, 11);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(212, 255, 63, 0.15);
+}
+
+.font-card-principal h2{
+    margin-top: 50px;
+    font-size: clamp(24px, 2.5vw, 35px);
+    /*NOVO: adapta o título à tela, sem ficar pequeno ou grande demais*/
+}
+
+.font-card-principal p{
+    margin-bottom: 30px;
+}
+
+/*fotos do lado do card principal*/
+
+.foto-card-principal{
+    display: flex;
+    gap: 15px;
+    flex: 1; /*NOVO: reserva uma parte do espaço para as fotos*/
+    min-width: 0;
+}
+
+.foto-card-principal img{
+    width: calc(50% - 7.5px);
+    /*ALTERAÇÃO: cada imagem ocupa metade do espaço disponível*/
+
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/*================= CATEGORIAS DO CATALOGO =================*/
+
+.categoria-catalogo{
+    gap:10px;
+    margin: 200px auto;
+    padding: 20px;
+    flex-direction: column;
+    text-align: left;
+    justify-content: flex-start;
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    margin: 200px auto;
+    background-color: rgb(194, 189, 189);
+    border-radius: 10px;
+
+}
+
+.container-conteudo .categoria-catalogo h2,
+.container-conteudo .categoria-catalogo p{
+    margin: 0;
+    color: black;
+}
+
+.categoria-card{
+    background-color: #0A0A0C;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 450px;
+    height: 140px;
+    border-radius: 20px;
+}
+
+.categoria-img{
+    width: 150px !important;
+    height: 140px !important;
+    flex-shrink: 0 !important;
+    overflow: hidden !important;
+}
+
+.categoria-img img{
+    width: 150px !important;
+    height: 140px !important;
+    max-width: none !important;
+    object-fit: cover !important;
+}
+
+.categoria-texto{
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 24px !important;
+}
+
+.categoria-texto span {
+    position: relative;
+    z-index: 2;
+    white-space: nowrap !important;
+}
+
+/*================= PRODUTOS =================*/
+
 .produto{
-    width: 280px; /*da a largura da caixa*/
-    padding: 12px; /*deixa um espaço detro da caixa pra foto nao fica grudada*/
+    min-height: 440px;
+    width: 100%; /*ALTERAÇÃO: ocupa a largura da coluna*/
+    min-width: 0;
+    padding: 12px; /*deixa um espaço dentro da caixa pra foto nao fica grudada*/
     background-color: #0a0a0c;
     border: 1px solid #8a2be2; /*cria uma bordinha de 1pixel roxo*/
     border-radius: 16px; /*arredonda as bordas*/
     position: relative;
     isolation: isolate;
     transition: transform 0.3s ease;
-    box-sizing: border-box;
 }
 
 .produtos{
     display: grid;
-    grid-template-columns: repeat(3, 280px);/*cria uma coluna com uma quantidade igual de cards*/
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /*ALTERAÇÃO: cria 3 colunas que dividem o espaço igualmente*/
+
     justify-content: center;
     margin: 30px auto;
-    width: 100%;
-    gap: 30px; /*da um espaço entre as caixas*/
+    width: 90%;
+    max-width: 1000px; /*NOVO: limita a largura do catálogo*/
+    gap: 25px; /*da um espaço entre as caixas*/
 }
 
 .produto:hover{
-    transform: scale(1.05);/*aumenta o card quando passa o mouse por cima*/
+    transform: scale(1.05); /*aumenta o card quando passa o mouse por cima*/
 }
 
 .produto::before{
     position: absolute;
-    content:"";
-    inset:-1px;
+    content: "";
+    inset: -1px;
     border-radius: inherit;
     background: linear-gradient(
-    90deg,
-    red,
-    magenta,
-    blue,
-    cyan,
-    lime,
-    yellow, 
-    red
+        90deg,
+        red,
+        magenta,
+        blue,
+        cyan,
+        lime,
+        yellow,
+        red
     );
+
     padding: 4px;
-    -webkit-mask:/*e oq define o comportamento das mascaras tipo um container e o "webkit" e a mesma coisa para os navegadores(as mascaras ainda funcionam sem ele)*/
-      linear-gradient(#fff 0 0) content-box,/*cria uma mascara de cor solida onde a cor nao importa importando apenas a opacidade*/
-      linear-gradient(#fff 0 0);
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
     /*para Safari (iOS/macOS) e chrome antigo*/
-    -webkit-mask-composite: xor;/*faz a mesma coisa q o de baixo soq faz com q funcione navegadores especificos*/
+    -webkit-mask-composite: xor; /*faz a mesma coisa q o de baixo soq faz com q funcione navegadores especificos*/
+
     /*padrao moderno oficial (firefox, edge e chrome atual)*/
-    mask-composite: exclude;/*faz uma subtracao das duas gradients acima apagando o meio e deixando a borda*/
-    opacity: 0;/*faz com q inicialmente nao apareca aparecendo so dps de passar o mouse*/
-    transition: opacity 0.3s ease;  
+    mask-composite: exclude; /*faz uma subtracao das duas gradients acima apagando o meio e deixando a borda*/
+
+    opacity: 0; /*faz com q inicialmente nao apareca aparecendo so dps de passar o mouse*/
+    transition: opacity 0.3s ease;
 }
 
 .produto:hover::before{
@@ -140,18 +309,19 @@ body{
 
 .produto img{
     width: 100%;
-    height: 250px;
+    height: 340px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.preco-prod{ 
-    color:#D4FF3F;
-    font-size:15px;
+.preco-prod{
+    color: #D4FF3F;
+    font-size: 15px;
     font-weight: bold;
 }
 
-/*cria botao para adicionar ao carrinho*/
+/*cria o botao para adicionar ao carrinho*/
+
 .adicionar-prod{
     position: relative;
     z-index: 2; /*usa da sobreposicao ficando em cima de quem e abaixo do num dele*/
@@ -160,7 +330,7 @@ body{
     font-size: 16px;
     padding: 8px 20px;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     border-radius: 16px;
     cursor: pointer;
     border: 0;
@@ -175,7 +345,8 @@ body{
 }
 
 /*===============cria e mexe no carrinho===============*/
-.carrinho {
+
+.carrinho{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,13 +357,14 @@ body{
     transition: 0.4s ease;
 }
 
-.carrinho:hover {
+.carrinho:hover{
     color: #D4FF3F;
     transform: scale(1.18);
 }
 
-/*===============cria e mexe no usuario===============*/
-.user {
+/*===============CRIA E MEXE NO USUARIO===============*/
+
+.user{
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -202,14 +374,14 @@ body{
     width: auto;
 }
 
-.icone-user {
+.icone-user{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 42px;
     height: 42px;
-    background-color:rgb(0, 0, 0);
-    color:#0A0A0C;
+    background-color: rgb(0, 0, 0);
+    color: #0A0A0C;
     border-radius: 50%;
     font-size: 30px !important;
     flex-shrink: 0;
@@ -218,9 +390,11 @@ body{
 
 .icone-user:hover{
     background-color: #D4FF3F;
-    color:#0A0A0C !important;
+    color: #0A0A0C !important;
     transform: scale(1.08);
 }
+
+/* ================= CONTEÚDO ================= */
 
 .container-conteudo h2{
     margin-top: 70px;
@@ -236,16 +410,24 @@ body{
     font-size: 20px;
 }
 
+/* ================= BARRA DE PESQUISA ================= */
+
 /*barra de pesquisa*/
+
 .barra-pesquisa{
     position: absolute;
-    left: 50%;                    /* <==== */
+    left: 50%; /* <==== */
     transform: translateX(-50%); /*centraliza dum jeito diferente*/
+
     display: flex;
-    width: 500px;
+
+    width: 35%; /*ALTERAÇÃO: tamanho proporcional à tela*/
+    max-width: 500px;
+    min-width: 200px; /*NOVO: evita que fique pequena demais*/
+
     height: 38px;
     background-color: #121218;
-    border: 1px solid  #8a2be2;
+    border: 1px solid #8a2be2;
     border-radius: 8px;
     overflow: hidden;
     box-sizing: border-box;
@@ -254,11 +436,10 @@ body{
 
 .barra-pesquisa input{
     flex: 1;
-    width: 500px;
-     
-    background-color: #121218;
-    color: rgb(239, 231, 231);   
+    min-width: 0; /*NOVO: permite que o input encolha dentro da barra*/
 
+    background-color: #121218;
+    color: rgb(239, 231, 231);
     border: none;
     outline: none;
     box-shadow: none;
@@ -267,16 +448,17 @@ body{
     margin: 0;
     padding: 1px 10px;
     box-sizing: border-box;
-    
 }
 
 .barra-pesquisa input::placeholder{
-    color: white; 
+    color: rgba(255, 255, 255, 0.4);
 }
 
 /*=================aqui cria o css do login=================*/
-.area-login {
-    width: 400px;
+
+.area-login{
+    width: 90%; /*ALTERAÇÃO: adapta a largura em telas menores*/
+    max-width: 400px;
     padding: 30px;
     margin: 100px auto;
     background-color: #121218;
@@ -287,24 +469,22 @@ body{
 }
 
 .area-login input:not([type="checkbox"]){
-    flex: 1;
-    width: 350px; 
+    width: 100%; /*ALTERAÇÃO: acompanha a largura do card*/
+
     background-color: #121218;
-    color: rgb(239, 231, 231);  
-    border: none;
+    color: rgb(239, 231, 231);
     border: 1px solid #8a2be2;
     border-radius: 8px;
-    margin: 0;
-    padding: 1px 10px;
+    margin: 0 0 20px;
+    padding: 10px;
     box-sizing: border-box;
-    margin-bottom: 20px;
 }
 
 .area-login input::placeholder{
     color: rgba(255, 255, 255, 0.4);
 }
 
-.area-login input[type="checkbox"] {
+.area-login input[type="checkbox"]{
     width: auto;
     margin: 4px;
     cursor: pointer;
@@ -315,15 +495,17 @@ body{
     text-align: left;
     margin-bottom: 8px;
 }
-/*cria o botao de entrar no login*/
+
+/*===============cria o botao de entrar no login===============*/
+
 .botao-entrar{
     margin-top: 10px;
     margin-bottom: 24px;
-    color: rgb(239, 231, 231);   
-    padding: 10px 80px; /*muda o tamanho do botao*/
+    color: rgb(239, 231, 231);
+    padding: 10px 40px; /*ALTERAÇÃO: botão com largura mais equilibrada*/
     border-radius: 10px;
     cursor: pointer; /*quando passa o mouse mostra q e clicavel*/
-    border: 0;/*remove qualquer borda padrao ao redor do botao*/
+    border: 0; /*remove qualquer borda padrao ao redor do botao*/
     background-color: #6a20af;
     box-shadow: #dbc1f4;
     letter-spacing: 1.5px;
@@ -331,7 +513,7 @@ body{
 }
 
 .botao-entrar:hover{
-    color: rgb(12, 11, 11);   
+    color: rgb(12, 11, 11);
     background-color: #D4FF3F;
     box-shadow: #dbc1f4;
     transform: scale(1.05);
@@ -339,9 +521,9 @@ body{
 }
 
 .botao-entrar:active{
-    background-color:#6a20af;
-    box-shadow:#dbc1f4;
-    transition: 100ms;  
+    background-color: #6a20af;
+    box-shadow: #dbc1f4;
+    transition: 100ms;
 }
 
 .cadastro p{
@@ -349,18 +531,19 @@ body{
 }
 
 .cadastro a{
-    color:#E879F9;
+    color: #E879F9;
     text-decoration: none;
 }
 
 .cadastro a:hover{
-    color:#FF9AEC;
+    color: #FF9AEC;
 }
 
-/*Cria o botao de voltar*/
+/*===============Cria o botao de voltar===============*/
+
 .botao-voltar{
     background-color: #121218;
-    color: rgb(239, 231, 231);  
+    color: rgb(239, 231, 231);
     border: 1px solid #8a2be2;
     border-radius: 8px;
     padding: 10px 20px;
@@ -370,29 +553,31 @@ body{
 }
 
 .botao-voltar:hover{
-    background-color:#D4FF3F;
-    color:rgb(12, 11, 11); 
+    background-color: #D4FF3F;
+    color: rgb(12, 11, 11);
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(212, 255, 63, 0.15);
 }
 
 /*===============aqui cria o css do carrinho===============*/
+
 .card-carrinho{
-    width: 720px;
+    width: 90%; /*ALTERAÇÃO: adapta a largura à tela*/
+    max-width: 720px;
     padding: 30px;
     margin: 40px auto;
-    background-color:#0A0A0C;
-    border: 1px solid#8a2be2;
+    background-color: #0A0A0C;
+    border: 1px solid #8a2be2;
     border-radius: 20px;
     box-sizing: border-box;
-    box-shadow: 0 0 20px rgba(138, 43, 226, 0.35);   
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.35);
 }
 
 .item-carrinho{
     display: flex;
     align-items: center;
-    gap:30px;
-    padding:20px;
+    gap: 30px;
+    padding: 20px;
     text-align: left;
 }
 
@@ -407,7 +592,7 @@ body{
     margin-bottom: 15px;
 }
 
-.info-prod p {
+.info-prod p{
     margin: 10px 0;
 }
 
@@ -432,8 +617,111 @@ body{
 }
 
 .botao-finalizar:hover{
-    background-color:#D4FF3F;
-    color:rgb(12, 11, 11); 
+    background-color: #D4FF3F;
+    color: rgb(12, 11, 11);
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(212, 255, 63, 0.15);
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+/*NOVO: adapta o site para tablets e telas menores que 900px*/
+
+@media (max-width: 900px){
+
+    .container-card-principal{
+        flex-wrap: wrap;
+    }
+
+    .card-principal{
+        width: 100%;
+        flex: auto;
+    }
+
+    .foto-card-principal{
+        width: 100%;
+        flex: auto;
+    }
+
+    .produtos{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .barra-pesquisa{
+        width: 30%;
+    }
+}
+
+/*NOVO: adapta o site para celulares*/
+
+@media (max-width: 600px){
+
+    .navbar{
+        padding: 5px 10px;
+    }
+
+    .navbar nav{
+        position: static;
+        transform: none;
+        width: auto;
+        height: auto;
+        background: transparent;
+    }
+
+    .navbar nav ul{
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .navbar a{
+        font-size: 11px;
+    }
+
+    .barra-pesquisa{
+        display: none;
+    }
+
+    .container-card-principal{
+        width: 92%;
+        margin: 90px auto 30px;
+        gap: 15px;
+    }
+
+    .card-principal{
+        height: auto;
+        min-height: 230px;
+        padding: 20px;
+    }
+
+    .foto-card-principal img{
+        height: 220px;
+    }
+
+    .produtos{
+        grid-template-columns: 1fr;
+        width: 90%;
+        gap: 20px;
+    }
+
+    .produto img{
+        height: 230px;
+    }
+
+    .card-carrinho{
+        padding: 15px;
+    }
+
+    .item-carrinho{
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .item-carrinho img{
+        width: 95px;
+        height: 110px;
+    }
+
+    .area-login{
+        padding: 20px;
+    }
 }
