@@ -110,11 +110,10 @@ body{
     align-items: center;
     justify-content: center; /*NOVO: centraliza o conjunto*/
     gap: 20px;
-
     width: 90%; /*ALTERAÇÃO: ocupa 90% da tela*/
     max-width: 1400px; /*NOVO: impede que fique largo demais*/
-
     margin: 100px auto 45px; /*ALTERAÇÃO: centraliza e mantém o espaço superior*/
+    margin-bottom: 350px;
 }
 
 /*card da frase principal*/
@@ -124,11 +123,9 @@ body{
     min-width: 0;
     height: 400px;
     padding: 25px;
-
     display: flex; /*NOVO: permite organizar o conteúdo interno*/
     align-items: center;
     justify-content: center;
-
     text-align: left;
     background-color: #39165a;
     border-radius: 10px;
@@ -173,7 +170,6 @@ body{
 .foto-card-principal img{
     width: calc(50% - 7.5px);
     /*ALTERAÇÃO: cada imagem ocupa metade do espaço disponível*/
-
     height: 400px;
     object-fit: cover;
     border-radius: 10px;
@@ -181,67 +177,92 @@ body{
 
 /*================= CATEGORIAS DO CATALOGO =================*/
 
-.categoria-catalogo{
-    gap:10px;
+.categoria-catalogo {
+    display: block;
+    width: 90%;
+    max-width: 1440px;
+    min-height: 800px;
     margin: 200px auto;
-    padding: 20px;
-    flex-direction: column;
-    text-align: left;
-    justify-content: flex-start;
-    display: flex;
-    width: 1000px;
-    height: 600px;
-    margin: 200px auto;
+    padding: 30px;
+    color: #0A0A0C;
     background-color: rgb(194, 189, 189);
-    border-radius: 10px;
+    border-radius: 20px;
+    
+}
 
+.categorias{
+    display: grid;
+    gap: 30px;
+    width: 100%;
+    margin-top: 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .container-conteudo .categoria-catalogo h2,
 .container-conteudo .categoria-catalogo p{
-    margin: 0;
+    margin: 10px;
     color: black;
+    text-align: left;
 }
 
 .categoria-card{
-    background-color: #0A0A0C;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    width: 450px;
-    height: 140px;
-    border-radius: 20px;
-}
-
-.categoria-img{
-    width: 150px !important;
-    height: 140px !important;
-    flex-shrink: 0 !important;
-    overflow: hidden !important;
-}
-
-.categoria-img img{
-    width: 150px !important;
-    height: 140px !important;
-    max-width: none !important;
-    object-fit: cover !important;
-}
-
-.categoria-texto{
-    flex: 1 !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 0 24px !important;
-}
-
-.categoria-texto span {
     position: relative;
-    z-index: 2;
-    white-space: nowrap !important;
+    isolation: isolate;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    height: 140px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e0e5ed;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.categoria-card:hover{
+    background-color: #8a2be2;
+    color: rgb(245, 240, 240);
+    transform: scale(1.02);
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.12);
+}
+
+.categoria-card img{
+    width: 150px;
+    height: 140px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.categoria-link{
+    display: block;
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.categoria-texto-card{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.categoria-catalogo h2{
+ font-size: 38px;
 }
 
 /*================= PRODUTOS =================*/
-
+.card-produtos{
+    display: block;
+    width: 90%;
+    max-width: 1440px;
+    min-height: 800px;
+    margin: 200px auto;
+    padding: 30px;
+    color: white;
+    background-color: #56317b;
+    border-radius: 20px;
+}
 .produto{
     min-height: 440px;
     width: 100%; /*ALTERAÇÃO: ocupa a largura da coluna*/
@@ -257,13 +278,12 @@ body{
 
 .produtos{
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     /*ALTERAÇÃO: cria 3 colunas que dividem o espaço igualmente*/
-
     justify-content: center;
     margin: 30px auto;
     width: 90%;
-    max-width: 1000px; /*NOVO: limita a largura do catálogo*/
+    max-width: 1250px; /*NOVO: limita a largura do catálogo*/
     gap: 25px; /*da um espaço entre as caixas*/
 }
 
