@@ -9,6 +9,22 @@
     font-size: 26px;
 }
 
+::-webkit-scrollbar{
+    width: 14px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: #0A0A0C;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgba(138, 43, 226, 0.5);
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+
 /* ================= CONFIGURAÇÕES GERAIS ================= */
 
 /* NOVO: aplica o cálculo de tamanho mais previsível a todos os elementos */
@@ -112,8 +128,8 @@ body{
     gap: 20px;
     width: 90%; /*ALTERAÇÃO: ocupa 90% da tela*/
     max-width: 1400px; /*NOVO: impede que fique largo demais*/
-    margin: 100px auto 45px; /*ALTERAÇÃO: centraliza e mantém o espaço superior*/
-    margin-bottom: 350px;
+    margin: 150px auto 45px; /*ALTERAÇÃO: centraliza e mantém o espaço superior*/
+    margin-bottom: 100px;
 }
 
 /*card da frase principal*/
@@ -400,8 +416,8 @@ body{
     justify-content: center;
     width: 42px;
     height: 42px;
-    background-color: rgb(0, 0, 0);
-    color: #0A0A0C;
+    background-color: #121218;
+    color: #F3F4F6;
     border-radius: 50%;
     font-size: 30px !important;
     flex-shrink: 0;
@@ -411,6 +427,21 @@ body{
 .icone-user:hover{
     background-color: #D4FF3F;
     color: #0A0A0C !important;
+    transform: scale(1.08);
+}
+
+.seta-voltar{
+    margin-right: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.4s ease; 
+}
+
+.seta-voltar:hover{
+    color:#D4FF3F;
     transform: scale(1.08);
 }
 

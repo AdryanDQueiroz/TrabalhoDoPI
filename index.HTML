@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script> 
+        <!-- Adiciona Libras no site -->
+
+<script>
+    new window.VLibras.Widget({
+        rootPath: 'https://vlibras.gov.br/app',
+        avatar: 'Hosana', <!-- Define o avatar como Hosana -->
+        position: 'R' <!-- Coloca na direita -->
+    });
+</script>
+
     <header class="navbar">
         <!-- Logo -->
         <h1 class="font-orbitron">CAMADA <a href="#"> BRUTA</a></h1>
@@ -40,11 +51,11 @@
                 </li>
 
                 <li>
-                    <a href="#"><h3>contato</h3></a>
+                    <a href="#"><h3>produtos</h3></a>
                 </li>
 
                 <li>
-                    <a href="#"><h3>sobre</h3></a>
+                    <a href="#"><h3>contato</h3></a>
                 </li>
             </ul>
         </nav>
@@ -144,7 +155,7 @@
                 <!-- Produto 1 -->
                 <div class="produto">
                     <img src="imagens/kratos.jpg" alt="Action Figure">
-                    <h5>Kratos</h5>
+                    <h5>Kratos God of War</h5>
                     <p class="preco-prod">R$129</p>
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>
@@ -152,28 +163,28 @@
                 <!-- Produto 2 -->
                 <div class="produto">
                     <img src="imagens/Itachi.jpg" alt="Action Figure">
-                    <h5>Itachi</h5>
+                    <h5>Itachi Uchiha</h5>
                     <p class="preco-prod">R$129</p>
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>
                 <!-- Produto 3 -->
                 <div class="produto">
                     <img src="imagens/Trunks.jpg" alt="Action Figure">
-                    <h5>Trunks</h5>
+                    <h5>Trunks do Futuro</h5>
                     <p class="preco-prod">R$129</p>
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>
                 <!-- Produto 4 -->
                 <div class="produto">
-                    <img src="imagens/Natsuki.jpg" alt="Action Figure">
-                    <h5>Natsuki</h5>
+                    <img src="imagens/luminariaLuffy.webp" alt="Action Figure">
+                    <h5>Luminária de One Piece</h5>
                     <p class="preco-prod">R$129</p>
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>
                 <!-- Produto 5 -->
                 <div class="produto">
                     <img src="imagens/Link.jpg" alt="Action Figure">
-                    <h5>Link</h5>
+                    <h5>Link Tears of The Kingdom</h5>
                     <p class="preco-prod">R$129</p>
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>
@@ -186,15 +197,15 @@
                 </div>
                 <!-- Produto 7 -->
                 <div class="produto">
-                    <img src="imagens/Guts.jpg" alt="Action Figure">
-                    <h5>Guts</h5>
+                    <img src="imagens/SuporteControleGTA.webp" alt="Action Figure">
+                    <h5>Suporte de Controle GTA VI</h5>
                     <p class="preco-prod">R$129</p>
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>
                 <!-- Produto 8 -->
                 <div class="produto">
-                    <img src="imagens/Ikki.webp " alt="Action Figure">
-                    <h5>Ikki de Fênix</h5>
+                    <img src="imagens/Gengar.webp " alt="Action Figure">
+                    <h5>Pokémon Gengar</h5>
                     <p class="preco-prod">R$129</p>
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>
@@ -205,20 +216,20 @@
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>
                 <div class="produto">
-                    <img src="imagens/Ikki.webp " alt="Action Figure">
-                    <h5>Ikki de Fênix</h5>
+                    <img src="imagens/SuporteLivros.webp " alt="Action Figure">
+                    <h5>Suporte de Livros</h5>
                     <p class="preco-prod">R$129</p>
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>
                 <div class="produto">
-                    <img src="imagens/Ikki.webp " alt="Action Figure">
-                    <h5>Ikki de Fênix</h5>
+                    <img src="imagens/Guts.jpg " alt="Action Figure">
+                    <h5>Guts Berserk</h5>
                     <p class="preco-prod">R$129</p>
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>
                 <div class="produto">
-                    <img src="imagens/Ikki.webp " alt="Action Figure">
-                    <h5>Ikki de Fênix</h5>
+                    <img src="imagens/Natsuki.jpg " alt="Action Figure">
+                    <h5>Natsuki Doki Doki</h5>
                     <p class="preco-prod">R$129</p>
                     <button class="adicionar-prod">+ Adcionar</button>
                 </div>  
@@ -226,5 +237,28 @@
         </section>
         
     </main>
+    <script>
+        function lerPagina() {
+    // Pega o texto principal da página
+    let texto = document.querySelector('main').innerText;
+
+    // Cria o objeto responsável pela leitura
+    let leitura = new SpeechSynthesisUtterance(texto);
+
+    // Define o idioma para português brasileiro
+    leitura.lang = 'pt-BR';
+
+    // Inicia a leitura
+    speechSynthesis.speak(leitura);
+}
+
+function pararLeitura() {
+    speechSynthesis.cancel();
+}
+    </script>
+<div class="leitor-voz">
+    <button onclick="lerPagina()">🔊 Ler página</button>
+    <button onclick="pararLeitura()">⏹ Parar</button>
+</div>
 </body>
 </html>
