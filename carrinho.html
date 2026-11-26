@@ -6,22 +6,37 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>>Carrinho Camada Bruta</title>
+    <title>Carrinho Camada Bruta</title>
 </head>
 <body>
-    <h2>Meu carrinho</h2>
+    <button class="seta-voltar" onclick="history.back()">
+    <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <h2 class="font-orbitron">Meu carrinho</h2>
+<main class="container-carrinho">
     <!--Produto 1-->
-    <div class="card-carrinho">
+    <section class="card-carrinho">
 
         <!-- Produto 1 -->
         <div class="item-carrinho">
             <img src="imagens/Natsuki.jpg" alt="produto1">
 
             <div class="info-prod">
-                <h3>Figure da Natsuki bonitinha</h3>
+                <h3>Figure da Natsuki</h3>
                 <p class="cor-pro-p">quantidade: 1</p>
-                <p class="preco-prod">R$50,00</p>
+                <p class="preco-prod">R$49,99</p>
             </div>
+
+            <div class="quantidade-prod">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+            
+            <button class="remover-prod" aria-label="Remover produto">
+                <i class="fa-solid fa-trash"></i>
+            </button>
         </div>
 
     <!--Produto 2-->
@@ -29,19 +44,49 @@
             <img src="imagens/Itachi.jpg" alt="produto2">
 
             <div class="info-prod">
-                <h3>Figure do Itachi ninja bolado</h3>
+                <h3>Figure do Itachi</h3>
                 <p class="cor-pro-p">quantidade: 1</p>
                 <p class="preco-prod">R$129,99</p>
             </div>
-        </div>
 
-        <div class="total-carrinho">
-            <h3>Total: R$ 179,99</h3>
-            <button class="botao-finalizar">Finalizar compra</button>
-        </div>
+            <div class="quantidade-prod">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
 
+            <button class="remover-prod" aria-label="Remover produto">
+                <i class="fa-solid fa-trash"></i>
+            </button>
     </div>
-    
-    <a href="index.html" class="voltar-inicio">Voltar para o início</a>
+
+    <!--Produto 3-->
+    <div class="item-carrinho">
+            <img src="imagens/Ikki.webp" alt="produto3">
+
+            <div class="info-prod">
+                <h3>Figure do Ikki</h3>
+                <p class="cor-pro-p">quantidade: 1</p>
+                <p class="preco-prod">R$129,99</p>
+            </div>
+
+            <div class="quantidade-prod">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+            
+            <button class="remover-prod" aria-label="Remover produto">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>        
+    </section>
+        <aside class="total-carrinho">
+            <h4 class="font-orbitron-menor">Resumo</h4>
+            <h5>Total:</h6>
+            <p class="preco-prod">R$ 309,97</p>
+            <button class="botao-finalizar">Finalizar compra</button>
+        </aside>
+</main>
 </body>
 </html>
