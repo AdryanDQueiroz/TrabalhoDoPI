@@ -1,264 +1,400 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Camada Bruta</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="stylesheet" href="style.css">
+     
 </head>
 <body>
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script> 
-        <!-- Adiciona Libras no site -->
 
-<script>
-    new window.VLibras.Widget({
-        rootPath: 'https://vlibras.gov.br/app',
-        avatar: 'Hosana', <!-- Define o avatar como Hosana -->
-        position: 'R' <!-- Coloca na direita -->
-    });
-</script>
+    <!-- ================= VLibras ====================== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
-    <header class="navbar">
+    <!-- Adiciona Libras no site -->
+    <script>
+        new window.VLibras.Widget({
+            rootPath: 'https://vlibras.gov.br/app',
+            avatar: 'Hosana', // Define o avatar como Hosana
+            position: 'R' // Coloca na direita
+        });
+    </script>
+
+    <!-- ================= ALTO CONTRASTE ====================== -->
+    <button class = 'btn_contraste' onclick="document.body.classList.toggle('alto-contraste')" >
+      <i class="fa-solid fa-circle-half-stroke"></i> Contraste
+    </button>
+
+    <!-- ================= NAVBAR ====================== -->
+    <header id="inicio" class="navbar">
+
         <!-- Logo -->
-        <h1 class="font-orbitron">CAMADA <a href="#"> BRUTA</a></h1>
+        <h1 class="font-orbitron">
+            CAMADA <a href="#inicio" class="logo">BRUTA</a>
+        </h1>
 
         <!-- Barra de pesquisa -->
-        <div class="barra-pesquisa">  
-            <input type="text" placeholder="Pesquisar">  
+        <div class="barra-pesquisa">
+            <input type="text" placeholder="Pesquisar">
         </div>
 
-<!-- ================= Carrinho ================== -->
-<div class="user">
+        <!-- ================= Carrinho ================== -->
+        <div class="user">
+            <a href="carrinho.html" class="carrinho">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
 
-    <a href="carrinho.html" class="carrinho">
-        <i class="fa-solid fa-cart-shopping"></i>
-    </a>
-
-    <!-- =============== Usuário ================ -->
-    <a href="login.html" class="icone-user">
-        <i class="fa-solid fa-circle-user"></i>
-    </a>
-
-</div>
+            <!-- =============== Usuário ================ -->
+            <a href="login.html" class="icone-user">
+                <i class="fa-solid fa-circle-user"></i>
+            </a>
+        </div>
 
         <!-- ============= Menu da nav ============= -->
         <nav>
             <ul>
                 <li>
-                    <a href="#"><h3>início</h3></a>
+                    <a href="#inicio"><h3>início</h3></a>
                 </li>
 
                 <li>
-                    <a href="#"><h3>produtos</h3></a>
+                    <a href="#produtos"><h3>produtos</h3></a>
                 </li>
 
                 <li>
-                    <a href="#"><h3>contato</h3></a>
+                    <a href="#contato"><h3>contato</h3></a>
                 </li>
+
             </ul>
         </nav>
-      
     </header>
 
     <!-- ================= CARD DE INTRODUCAO ====================== -->
     <main class="container-conteudo">
 
         <!-- Título principal -->
-    <div class="container-card-principal">
-        <div class="card-principal">
-            <div class="font-card-principal">
-            <h2 class="font-orbitron">Transformando 
-            <span style="color:#D4FF3F"> ideias</span> em camadas</h2>
-            <p>Action figures, miniaturas e peças personalizadas feitas especialmente para você .</p>
-          
-            <button class="botao-catalogo">VER PRODUTOS -></button>
+        <div class="container-card-principal">
+            <div class="card-principal">
+                <div class="font-card-principal">
+                    <h2 class="font-orbitron">
+                        Transformando
+                        <span style="color:#D4FF3F"> ideias</span> em camadas
+                    </h2>
+                    <p> Action figures, miniaturas e peças personalizadas feitas especialmente para você.</p>
+                    <a href="#produtos" class="botao-catalogo">
+                        VER PRODUTOS ->
+                    </a>
+                </div>
+            </div>
+
+            <!-- Fotos do lado do card principal -->
+            <div class="foto-card-principal">
+                <img src="imagens/Guts.jpg" alt="Action figure">
+                <img src="imagens/Link.jpg" alt="Action figure">
             </div>
         </div>
 
-       <!-- Fotos do lado do card principal -->
-        <div class="foto-card-principal">
-            <img src="imagens/Guts.jpg" alt="action figure">
-            <img src="imagens/Link.jpg" alt="action figure">
+        <!-- ================= CATALOGO DE CATEGORIAS ================== -->
+        <div class="categoria-catalogo">
+            <h2>Categorias</h2>
+            <p>Encontre a peça ideal para sua coleção</p>
+            <div class="categorias">
+                <a href="#" class="categoria-link">
+                    <div class="categoria-card">
+                        <img src="imagens/Itachi.jpg" alt="Games">
+                        <div class="categoria-texto-card">
+                            <span>Animes</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="categoria-link">
+                    <div class="categoria-card">
+                        <img src="imagens/SuporteControle.webp" alt="Games">
+                        <div class="categoria-texto-card">
+                            <span>Acessórios</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="categoria-link">
+                    <div class="categoria-card">
+                        <img src="imagens/Alexandrewebp.webp" alt="Games">
+                        <div class="categoria-texto-card">
+                            <span>Enfeites</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="categoria-link">
+                    <div class="categoria-card">
+                        <img src="imagens/Diorama.webp" alt="Games">
+                        <div class="categoria-texto-card">
+                            <span>Dioramas</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="categoria-link">
+                    <div class="categoria-card">
+                        <img src="imagens/Kratos.jpg" alt="Games">
+                        <div class="categoria-texto-card">
+                            <span>Games e RPG</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="categoria-link">
+                    <div class="categoria-card">
+                        <img src="imagens/GutsPorFazer.webp" alt="Games">
+                        <div class="categoria-texto-card">
+                            <span>Feitos sob encomenda</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
 
-    <!-- ================= CATALOGO DE CATEGORIAS ================== -->
-<div class="categoria-catalogo">
-        <h2>Categorias</h2>
-        <p>Encontre a peça ideal para sua coleção</p>
-    <div class="categorias">
-        <a href="#" class="categoria-link">
-            <div class="categoria-card">
-                <img src="imagens/Itachi.jpg" alt="Games">
-                <div class="categoria-texto-card">
-                    <span>Animes</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="categoria-link">
-            <div class="categoria-card">
-                <img src="imagens/SuporteControle.webp" alt="Games">
-                <div class="categoria-texto-card">
-                    <span>Acessórios</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="categoria-link">
-            <div class="categoria-card">
-                <img src="imagens/Alexandrewebp.webp" alt="Games">
-                <div class="categoria-texto-card">
-                    <span>Enfeites</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="categoria-link">
-            <div class="categoria-card">
-                <img src="imagens/Diorama.webp" alt="Games">
-                <div class="categoria-texto-card">
-                    <span>Dioramas</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="categoria-link">
-            <div class="categoria-card">
-                <img src="imagens/Kratos.jpg" alt="Games">
-                <div class="categoria-texto-card">
-                    <span>Games e RPG</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="categoria-link">
-            <div class="categoria-card">
-                <img src="imagens/GutsPorFazer.webp" alt="Games">
-                <div class="categoria-texto-card">
-                    <span>Feitos sob encomenda</span>
-                </div>
-            </div>
-        </a>
-    </div>
-</div>
-
-  
         <!-- ================= PRODUTOS ================== -->
-         <div class="card-produtos">
-        <section id="produto">
-            <h3>Produtos em Destaque</h3>
-            <div class="produtos">
+        <div class="card-produtos">
+            <section class="secao-produtos" id="produtos">
+                <h3>Produtos em Destaque</h3>
+                <div class="produtos">
 
-                <!-- Produto 1 -->
-                <div class="produto">
-                    <img src="imagens/kratos.jpg" alt="Action Figure">
-                    <h5>Kratos God of War</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>
+                    <!-- Produto 1 -->
+                    <div class="produto">
+                        <img src="imagens/kratos.jpg" alt="Action Figure">
+                        <h5>Kratos God of War</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
 
-                <!-- Produto 2 -->
-                <div class="produto">
-                    <img src="imagens/Itachi.jpg" alt="Action Figure">
-                    <h5>Itachi Uchiha</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
+                    <!-- Produto 2 -->
+                    <div class="produto">
+                        <img src="imagens/Itachi.jpg" alt="Action Figure">
+                        <h5>Itachi Uchiha</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
+
+                    <!-- Produto 3 -->
+                    <div class="produto">
+                        <img src="imagens/Trunks.jpg" alt="Action Figure">
+                        <h5>Trunks do Futuro</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
+
+
+                    <!-- Produto 4 -->
+                    <div class="produto">
+                        <img src="imagens/luminariaLuffy.webp" alt="Action Figure">
+                        <h5>Luminária de One Piece</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
+
+                    <!-- Produto 5 -->
+                    <div class="produto">
+                        <img src="imagens/Link.jpg" alt="Action Figure">
+                        <h5>Link Tears of The Kingdom</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
+
+                    <!-- Produto 6 -->
+                    <div class="produto">
+                        <img src="imagens/BarbaBranca.jpg" alt="Action Figure">
+                        <h5>Barba Branca</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
+
+                    <!-- Produto 7 -->
+                    <div class="produto">
+                        <img src="imagens/SuporteControleGTA.webp" alt="Action Figure">
+                        <h5>Suporte de Controle GTA VI</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
+
+                    <!-- Produto 8 -->
+                    <div class="produto">
+                        <img src="imagens/Gengar.webp" alt="Action Figure">
+                        <h5>Pokémon Gengar</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
+
+                    <!-- Produto 9 -->
+                    <div class="produto">
+                        <img src="imagens/Ikki.webp" alt="Action Figure">
+                        <h5>Ikki de Fênix</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
+
+                    <!-- Produto 10 -->
+                    <div class="produto">
+                        <img src="imagens/SuporteLivros.webp" alt="Action Figure">
+                        <h5>Suporte de Livros</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
+
+                    <!-- Produto 11 -->
+                    <div class="produto">
+                        <img src="imagens/Guts.jpg" alt="Action Figure">
+                        <h5>Guts Berserk</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
+
+                    <!-- Produto 12 -->
+                    <div class="produto">
+                        <img src="imagens/Natsuki.jpg" alt="Action Figure">
+                        <h5>Natsuki Doki Doki</h5>
+                        <p class="preco-prod">R$129</p>
+                        <button class="adicionar-prod">+ Adcionar</button>
+                    </div>
                 </div>
-                <!-- Produto 3 -->
-                <div class="produto">
-                    <img src="imagens/Trunks.jpg" alt="Action Figure">
-                    <h5>Trunks do Futuro</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>
-                <!-- Produto 4 -->
-                <div class="produto">
-                    <img src="imagens/luminariaLuffy.webp" alt="Action Figure">
-                    <h5>Luminária de One Piece</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>
-                <!-- Produto 5 -->
-                <div class="produto">
-                    <img src="imagens/Link.jpg" alt="Action Figure">
-                    <h5>Link Tears of The Kingdom</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>
-                <!-- Produto 6 -->
-                <div class="produto">
-                    <img src="imagens/BarbaBranca.jpg" alt="Action Figure">
-                    <h5>Barba Branca</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>
-                <!-- Produto 7 -->
-                <div class="produto">
-                    <img src="imagens/SuporteControleGTA.webp" alt="Action Figure">
-                    <h5>Suporte de Controle GTA VI</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>
-                <!-- Produto 8 -->
-                <div class="produto">
-                    <img src="imagens/Gengar.webp " alt="Action Figure">
-                    <h5>Pokémon Gengar</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>
-                <div class="produto">
-                    <img src="imagens/Ikki.webp " alt="Action Figure">
-                    <h5>Ikki de Fênix</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>
-                <div class="produto">
-                    <img src="imagens/SuporteLivros.webp " alt="Action Figure">
-                    <h5>Suporte de Livros</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>
-                <div class="produto">
-                    <img src="imagens/Guts.jpg " alt="Action Figure">
-                    <h5>Guts Berserk</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>
-                <div class="produto">
-                    <img src="imagens/Natsuki.jpg " alt="Action Figure">
-                    <h5>Natsuki Doki Doki</h5>
-                    <p class="preco-prod">R$129</p>
-                    <button class="adicionar-prod">+ Adcionar</button>
-                </div>  
-            </div>
-        </section>
-        
+            </section>
+        </div>
     </main>
+
+    <!-- ================= LEITOR DE VOZ ====================== -->
     <script>
         function lerPagina() {
-    // Pega o texto principal da página
-    let texto = document.querySelector('main').innerText;
 
-    // Cria o objeto responsável pela leitura
-    let leitura = new SpeechSynthesisUtterance(texto);
+            // Pega o texto principal da página
+            let texto = document.querySelector('main').innerText;
 
-    // Define o idioma para português brasileiro
-    leitura.lang = 'pt-BR';
+            // Cria o objeto responsável pela leitura
+            let leitura = new SpeechSynthesisUtterance(texto);
 
-    // Inicia a leitura
-    speechSynthesis.speak(leitura);
-}
+            // Define o idioma para português brasileiro
+            leitura.lang = 'pt-BR';
 
-function pararLeitura() {
-    speechSynthesis.cancel();
-}
+            // Inicia a leitura
+            speechSynthesis.speak(leitura);
+        }
+        function pararLeitura() {
+            speechSynthesis.cancel();
+        }
+
     </script>
-<div class="leitor-voz">
-    <button onclick="lerPagina()">🔊 Ler página</button>
-    <button onclick="pararLeitura()">⏹ Parar</button>
-</div>
+
+    <div class="leitor-voz">
+        <button onclick="lerPagina()">Ler página</button>
+        <button onclick="pararLeitura()">Parar</button>
+    </div>
+
+    <!-- ================= FOOTER ====================== -->
+    <footer class="footer" id="contato">
+        <div class="footer-conteudo">
+
+            <!-- COLUNA 1: LOGO E REDES SOCIAIS -->
+            <div class="footer-redes">
+                <div class="footer-logo">
+                    <h3 class="font-orbitron">CAMADA<span style="color:#D4FF3F">BRUTA</span></h3>
+                    <p>Transformando ideias em camadas.</p>
+                </div>
+
+                <div class="footer-redes-sociais">
+                    <a href="https://www.instagram.com/camadabruta/"
+                       class="footer-link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       id="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#"
+                       class="footer-link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       id="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#"
+                       class="footer-link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       id="Whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- COLUNA 2 -->
+            <ul class="footer-list">
+                <li>
+                    <h3 class="font-orbitron">Sobre nós</h3>
+                </li>
+
+                <li>
+                    <a href="#">Nossa história</a>
+                </li>
+
+                <li>
+                    <a href="#">Quem somos</a>
+                </li>
+
+                <li>
+                    <a href="#">Contatos</a>
+                </li>
+
+            </ul>
+
+            <!-- COLUNA 3 -->
+            <ul class="footer-list">
+                <li>
+                    <h3 class="font-orbitron">Produtos</h3>
+                </li>
+
+                <li>
+                    <a href="#produtos">Games</a>
+                </li>
+
+                <li>
+                    <a href="#produtos">Animes</a>
+                </li>
+
+                <li>
+                    <a href="#produtos">Filmes</a>
+                </li>
+
+            </ul>
+
+            <!-- COLUNA 4 -->
+            <div class="footer-subscribe">
+                <h3 class="font-orbitron">Inscreva-se</h3>
+                <p>
+                    Entre com seu e-mail e receba novidades
+                    sobre produtos do seu interesse.
+                </p>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Seu e-mail">
+                    <button type="button">
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIREITOS AUTORAIS -->
+        <div class="footer-copyright">
+            &#169 2026 Camada Bruta. Todos os direitos reservados.
+        </div>
+    </footer>
 </body>
 </html>

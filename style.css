@@ -674,6 +674,106 @@ body{
     box-shadow: 0 0 10px rgba(212, 255, 63, 0.15);
 }
 
+/* INICIO DO FOOTER */
+.footer{
+    width: 100%;
+    color: #F3F4F6;
+    background-color: #161616;
+}
+
+/* CONTEÚDO PRINCIPAL DO FOOTER */
+.footer-conteudo{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 3.5rem;
+    gap: 2rem;
+}
+/* LOGO E REDES SOCIAIS */
+.footer-redes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-redes-sociais{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
+
+.footer-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.footer-redes-sociais .footer-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: white;
+    border-radius: 50%;
+}
+
+#Instagram{
+    background:linear-gradient(#7f37c9, #ff2992, #ff9807) ;
+}
+
+#Facebook{
+    background:linear-gradient(#4267b3) ;
+}
+
+#Whatsapp{
+    background:linear-gradient(#25d366) ;
+}
+
+.footer-list{
+    display: flex;
+    flex-direction: column; /* Texto em cima, ícones embaixo */
+    align-items: center;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer a{
+    color: rgba(174, 174, 174, 0.5);
+    text-decoration: none;
+    transition: all 0.3s ease;;
+}
+
+.footer a:hover{
+    background-color: #491f71;
+}
+
+.input-group{
+    display: flex;
+    align-items: center;
+    background-color: #39165a;
+    border-radius: 12px;
+}
+
+.input-group input{
+    all: unset;
+    padding: 2px;
+    width: 100%;
+}
+
+.input-group button{
+    background-color: #25d366;
+}
+
 /* ================= RESPONSIVIDADE ================= */
 
 /*NOVO: adapta o site para tablets e telas menores que 900px*/
@@ -775,4 +875,278 @@ body{
     .area-login{
         padding: 20px;
     }
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 760px) {
+    .navbar {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .navbar h1 {
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .navbar h1 a {
+        font-size: 16px;
+    }
+
+    .barra-pesquisa {
+        position: static;
+        transform: none;
+        flex: 1;
+        min-width: 90px;
+        width: auto;
+        height: 32px;
+    }
+
+    .barra-pesquisa input {
+        font-size: 12px;
+        padding: 0 8px;
+    }
+
+    .user {
+        flex: 0;
+        gap: 8px;
+    }
+
+    .icone-user {
+        width: 34px;
+        height: 34px;
+        font-size: 22px !important;
+    }
+
+
+    .navbar nav {
+        top: 100%; 
+        width: 85%;
+        height: 38px;
+    }
+
+    .navbar nav ul {
+        gap: 18px;
+    }
+
+    .navbar a h3,
+    .navbar a {
+        font-size: 13px;
+        margin: 0;
+    }
+
+    /* --- 2. BANNER PRINCIPAL (Empilha o card roxo e as 2 fotos) --- */
+    .container-card-principal {
+        flex-direction: column;
+        width: 92%;
+        margin: 65px auto 30px;
+        gap: 15px;
+    }
+
+    .card-principal {
+        width: 100%;
+        height: auto;
+        padding: 24px 18px;
+        text-align: center;
+    }
+
+    .font-card-principal h2 {
+        margin-top: 0;
+        font-size: 22px;
+    }
+
+    .foto-card-principal {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .foto-card-principal img {
+        width: calc(50% - 5px);
+        height: 190px;
+    }
+
+    .categoria-catalogo {
+        width: 92%;
+        min-height: auto;
+        margin: 30px auto;
+        padding: 18px 14px;
+    }
+
+    .categoria-catalogo h2 {
+        font-size: 26px;
+        margin: 0 0 5px 0;
+    }
+
+    .categorias {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .categoria-card {
+        flex-direction: column;
+        height: auto;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #e6e6e6;
+    }
+
+    .categoria-card img {
+        width: 100%;
+        height: 85px;
+        border-radius: 0;
+    }
+
+    .categoria-texto-card {
+        padding: 8px 4px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .categoria-texto-card span {
+        font-size: 12px;
+        font-weight: 700;
+        color: #0A0A0C;
+    }
+
+    /* --- 4. PRODUTOS EM DESTAQUE --- */
+    .card-produtos {
+        width: 92%;
+        min-height: auto;
+        margin: 30px auto;
+        padding: 18px 10px;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        gap: 10px;
+        margin: 15px auto;
+    }
+
+    .produto {
+        min-height: auto;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .produto:hover {
+        transform: none;
+    }
+
+    .produto img {
+        height: 160px;
+    }
+
+    .produto h5 {
+        font-size: 14px;
+        margin: 8px 0 4px;
+    }
+
+    .adicionar-prod {
+        font-size: 13px;
+        padding: 8px 6px;
+        margin-bottom: 0;
+    }
+
+    /* --- 5. CARRINHO E LOGIN --- */
+    .card-carrinho {
+        padding: 15px;
+    }
+
+    .item-carrinho {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .item-carrinho img {
+        width: 95px;
+        height: 110px;
+    }
+
+    .area-login {
+        margin: 60px auto;
+        padding: 20px;
+    }
+}
+
+/* ================= ALTO CONTRASTE ================= */
+.btn_contraste{
+    position:fixed;
+    bottom:20px; 
+    left:20px; 
+    z-index:9999; 
+    background:#000; 
+    color: #fff; 
+    border:2px solid 
+    #fff; 
+    padding:10px 14px; 
+    border-radius:50px; 
+    cursor:pointer; 
+    font-weight:bold;
+}
+
+/* HOME */
+body.alto-contraste {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.alto-contraste .card-principal,
+body.alto-contraste .card-produtos,
+body.alto-contraste .produto,
+body.alto-contraste .navbar,
+body.alto-contraste .barra-pesquisa{
+    background-color: #000000 !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: none !important;
+}
+
+body.alto-contraste .categoria-catalogo,
+body.alto-contraste .categoria-card{
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
+
+body.alto-contraste .produto::before,
+body.alto-contraste .produto:hover::before {
+    display: none !important;
+    content: none !important;
+}
+
+body.alto-contraste .categoria-catalogo h2,
+body.alto-contraste .categoria-catalogo p,
+body.alto-contraste .categoria-texto-card span {
+    color: #ffffff !important;
+}
+
+body.alto-contraste a,
+body.alto-contraste .preco-prod {
+    color: #ffffff !important;
+}
+
+html.alto-contraste::-webkit-scrollbar-track,
+html:has(body.alto-contraste)::-webkit-scrollbar-track {
+    background-color: #000000 !important;
+}
+
+/LOGIN/
+body.alto-contraste .botao-entrar,
+body.alto-contraste .botao-entrar:hover,
+body.alto-contraste .botao-entrar:active,
+body.alto-contraste .cadastro,
+body.alto-contraste .cadastro a,
+body.alto-contraste .cadastro a:houver,
+body.alto-contraste .area-login,
+body.alto-contraste .area-login input:not([type="checkbox"]),
+body.alto-contraste .area-login input::placeholder{
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
 }
