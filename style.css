@@ -385,6 +385,53 @@ body{
     transform: scale(1.03);
     letter-spacing: 1px;
 }
+  /*================= ENCOMENDA ======================*/
+
+ .container-encomenda {
+    width: 90%;
+    max-width: 1440px;
+    margin: 100px auto 120px;
+}
+
+.container-encomenda h2 {
+    margin: 0;
+    font-size: 32px;
+    color: #F3F4F6;
+}
+
+.card-encomenda {
+    width: 90%;               
+    max-width: 1440px;        
+    margin: 100px auto 120px; 
+    height: 350px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #39165a;
+    border: 1px solid #8a2be2;
+    border-radius: 20px;
+}
+
+.botao-contato {
+    display: inline-block;
+    background-color: #D4FF3F;
+    color: #0A0A0C;
+    font-weight: bold;
+    text-decoration: none;    
+    border-radius: 25px;
+    padding: 14px 32px;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+.botao-contato:hover {
+    background-color: #8a2be2;
+    color: #ffffff;
+    transform: scale(1.05);
+}
 
 /*===============cria e mexe no carrinho===============*/
 .carrinho{
@@ -629,7 +676,7 @@ body{
     padding: 30px;
     gap: 25px;
     background-color: #0A0A0C;
-    border: 1px solid #8a2be2;
+    border: 1px solid rgb(138, 43, 226);
     border-radius: 20px;
 }
 
@@ -1171,7 +1218,75 @@ body{
         margin: 60px auto;
         padding: 20px;
     }
+
+    /*RODAPÉ*/
+
+footer,
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px 80px; 
+        gap: 30px;
+    }
+
+    
+    .footer-conteudo, 
+    footer > div:first-child {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        overflow-x: auto;            
+        scroll-snap-type: x mandatory; 
+        gap: 24px;
+        width: 100%;
+        padding: 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .footer-redes,
+    .footer-list,
+    .footer-conteudo > div {
+        flex: 0 0 220px;        
+        scroll-snap-align: center;
+    }
+
+    .footer-redes,
+    .footer-list {
+        width: 100%;
+        align-items: center;
+    }
+
+    .footer-redes-sociais {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .input-group {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto 0;
+        padding: 4px 8px;
+    }
+
+    .input-group input {
+        padding: 8px;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .input-group button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
 }
+
+
 
 /* ================= ALTO CONTRASTE ================= */
 .btn_contraste{
@@ -1199,7 +1314,9 @@ body.alto-contraste .card-principal,
 body.alto-contraste .card-produtos,
 body.alto-contraste .produto,
 body.alto-contraste .navbar,
-body.alto-contraste .barra-pesquisa{
+body.alto-contraste .barra-pesquisa,
+body.alto-contraste .botao-catalogo,
+body.alto-contraste .botao-catalogo:hover{
     background-color: #000000 !important;
     border: 2px solid #ffffff !important;
     box-shadow: none !important;
@@ -1234,17 +1351,57 @@ html:has(body.alto-contraste)::-webkit-scrollbar-track {
     background-color: #000000 !important;
 }
 
+body.alto-contraste .adicionar-prod,
+body.alto-contraste .adicionar-prod:hover{
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
+
 /*LOGIN*/
 body.alto-contraste .botao-entrar,
 body.alto-contraste .botao-entrar:hover,
 body.alto-contraste .botao-entrar:active,
-body.alto-contraste .cadastro,
-body.alto-contraste .cadastro a,
-body.alto-contraste .cadastro a:houver,
 body.alto-contraste .area-login,
-body.alto-contraste .area-login input:not([type="checkbox"]),
-body.alto-contraste .area-login input::placeholder{
+body.alto-contraste .area-login input {
     background-color: #000000 !important;
     color: #ffffff !important;
     border: 2px solid #ffffff !important;
+    box-shadow: none !important;
+}
+
+/*LOGIN*/
+body.alto-contraste .cadastro p,
+body.alto-contraste .cadastro a,
+body.alto-contraste .cadastro a:hover {
+    color: #ffffff !important;
+}
+/*CARRINHO*/
+body.alto-contraste .botao-finalizar,
+body.alto-contraste .botao-finalizar:hover{
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}
+
+
+body.alto-contraste .total-carrinho,
+body.alto-contraste .card-carrinho{
+    background-color: #000 !important;
+    border: 1px solid #fff !important;
+    box-shadow: none !important;
+
+}
+body.alto-contraste .remover-prod{
+    filter: brightness(0) invert(1) !important;
+}
+/* ENCOMENDA */
+body.alto-contraste .card-encomenda,
+body.alto-contraste .container-encomenda,
+body.alto-contraste .botao-contato,
+body.alto-contraste .botao-contato:hover{
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: none !important;
 }
